@@ -1,5 +1,6 @@
 import { client } from "../lib/apollo";
 import { gql } from "@apollo/client";
+import Link from "next/link";
 
 export default function Home({ posts }) {
   return (
@@ -21,9 +22,9 @@ export default function Home({ posts }) {
                   <li>
                     <a
                       href="javascript:void(0)"
-                      className="inline-flex items-center justify-center rounded-lg bg-primary py-4 px-6 text-center text-base font-normal text-white hover:bg-opacity-90 sm:px-10 lg:px-8 xl:px-10"
+                      className="inline-flex items-center justify-center rounded-lg bg-blue-600 py-4 px-6 text-center text-base font-normal text-white hover:bg-opacity-90 sm:px-10 lg:px-8 xl:px-10"
                     >
-                      Get Started
+                      Github
                     </a>
                   </li>
                   <li>
