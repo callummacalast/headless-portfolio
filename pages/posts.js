@@ -7,7 +7,7 @@ const posts = ({ posts }) => {
   return (
     <section className="pt-20 lg:pt-[120px] pb-10 lg:pb-20">
       <div className="container">
-        <div className="flex flex-wrap justify-center -mx-4">
+        <div className="flex flex-wrap justify-center ">
           <div className="w-full px-4">
             <div className="text-center mx-auto mb-[60px] lg:mb-20 max-w-[510px]">
               <span className="font-semibold text-lg text-primary mb-2 block">
@@ -26,13 +26,12 @@ const posts = ({ posts }) => {
                 Our Recent News
               </h2>
               <p className="text-base text-body-color">
-                There are many variations of passages of Lorem Ipsum available
-                but the majority have suffered alteration in some form.
+                Here are some of our blogs
               </p>
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap -mx-4">
+        <div className="flex flex-wrap ">
           {posts.map((post) => {
             return <PostCard key={post.uri} post={post}></PostCard>;
           })}

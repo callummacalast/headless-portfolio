@@ -8,21 +8,19 @@ export default function SlugPage({ post }) {
   return (
     <div>
       <Head>
-        <title>Headless WP Next Starter</title>
+        <title>{post.title}</title>
         <link rel="icon" href="favicon.ico"></link>
       </Head>
 
-      <main>
-        <div className="siteHeader">
-          <h1 className="title">{post.title}</h1>
-          <p>
-            ✍️ &nbsp;&nbsp;
-            {`${post.author.node.firstName} ${post.author.node.lastName}`} | 🗓️
-            &nbsp;&nbsp;{new Date(post.date).toLocaleDateString()}
-          </p>
-        </div>
-        <article dangerouslySetInnerHTML={{ __html: post.content }}></article>
-      </main>
+      <div className="siteHeader">
+        <h1 className="title">{post.title}</h1>
+        <p>
+          ✍️ &nbsp;&nbsp;
+          {`${post.author.node.firstName} ${post.author.node.lastName}`} | 🗓️
+          &nbsp;&nbsp;{new Date(post.date).toLocaleDateString()}
+        </p>
+      </div>
+      <article dangerouslySetInnerHTML={{ __html: post.content }}></article>
     </div>
   );
 }

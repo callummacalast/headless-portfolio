@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
         <link rel="icon" href="favicon.ico"></link>
       </Head>
       <Navbar />
-      <main>{children}</main>
+      <main className="container mx-auto">{children}</main>
       <Footer />
     </>
   );

@@ -92,7 +92,7 @@ export default function Home({ posts }) {
               <div className="lg:ml-auto lg:text-right">
                 <div className="relative z-10 inline-block pt-11 lg:pt-0">
                   <img
-                    src="assets/images/hero/hero-image-01.png"
+                    src="/img/john-fowler-RsRTIofe0HE-unsplash.jpg"
                     alt="hero"
                     className="max-w-full lg:ml-auto"
                   />
