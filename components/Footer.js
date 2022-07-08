@@ -37,7 +37,7 @@ export default function Footer() {
       <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
         © 2022{" "}
         <a href="https://flowbite.com" className="hover:underline">
-          Flowbite™
+          callummacalast
         </a>
         . All Rights Reserved.
       </span>
