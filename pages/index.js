@@ -91,11 +91,6 @@ export default function Home({ posts }) {
             <div className="w-full px-4 lg:w-6/12">
               <div className="lg:ml-auto lg:text-right">
                 <div className="relative z-10 inline-block pt-11 lg:pt-0">
-                  <img
-                    src="/img/john-fowler-RsRTIofe0HE-unsplash.jpg"
-                    alt="hero"
-                    className="max-w-full lg:ml-auto"
-                  />
                   <span className="absolute -left-8 -bottom-8 z-[-1]">
                     <svg
                       width="93"

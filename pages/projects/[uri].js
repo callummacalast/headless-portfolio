@@ -18,6 +18,7 @@ export default function SlugPage({ project }) {
           {`${project.author.node.firstName} ${project.author.node.lastName}`} |
           🗓️ &nbsp;&nbsp;{new Date(project.date).toLocaleDateString()}
         </p>
+        <p>This is an acf field woo woo{project.contactPage.phoneNumber}</p>
       </div>
       <article
         className=""
@@ -40,6 +41,9 @@ export async function getStaticProps({ params }) {
             firstName
             lastName
           }
+        }
+        contactPage {
+          phoneNumber
         }
       }
     }
