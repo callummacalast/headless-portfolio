@@ -1,139 +1,139 @@
-import { client } from "../lib/apollo";
-import { gql } from "@apollo/client";
-import Link from "next/link";
+import { client } from '../lib/apollo'
+import { gql } from '@apollo/client'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Home({ posts }) {
   return (
-    <div className="container mx-auto">
-      <div className="relative bg-white pt-[80px pb-[110px] lg:pt-[80px]">
-        <div className="container">
-          <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4 lg:w-5/12">
-              <div className="hero-content">
-                <h1 className="mb-3 text-4xl font-bold leading-snug flex flex-col text-dark sm:text-[42px] lg:text-[40px] xl:text-[42px]">
-                  Callum Macalast
-                  <small className="text-xs">- Full-Stack Web Developer</small>
-                </h1>
-                <p className="mb-8 max-w-[480px] text-base text-body-color">
-                  I'm Callum Macalast a full stack web developer! I have been
-                  building websites since 2022
-                </p>
-                <ul className="flex flex-wrap items-center">
-                  <li>
-                    <a
-                      href="javascript:void(0)"
-                      className="inline-flex items-center justify-center rounded-lg bg-blue-600 py-4 px-6 text-center text-base font-normal text-white hover:bg-opacity-90 sm:px-10 lg:px-8 xl:px-10"
-                    >
-                      Github
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="javascript:void(0)"
-                      className="inline-flex items-center justify-center py-4 px-6 text-center text-base font-normal text-body-color hover:text-primary sm:px-10 lg:px-8 xl:px-10"
-                    >
-                      <span className="mr-2">
-                        <svg
-                          width="22"
-                          height="22"
-                          viewBox="0 0 22 22"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle cx="11" cy="11" r="11" fill="#3056D3" />
-                          <rect
-                            x="6.90906"
-                            y="13.3636"
-                            width="8.18182"
-                            height="1.63636"
-                            fill="white"
-                          />
-                          <rect
-                            x="10.1818"
-                            y="6"
-                            width="1.63636"
-                            height="4.09091"
-                            fill="white"
-                          />
-                          <path
-                            d="M11 12.5454L13.8343 9.47726H8.16576L11 12.5454Z"
-                            fill="white"
-                          />
-                        </svg>
-                      </span>
-                      Download App
-                    </a>
-                  </li>
-                </ul>
-                <div className="clients pt-16">
-                  <h6 className="mb-2 flex items-center text-xs font-normal text-body-color">
-                    Some Of Our Clients
-                    <span className="ml-2 inline-block h-[1px] w-8 bg-body-color"></span>
-                  </h6>
-                  <div className="flex items-center">
-                    <div className="mr-4 w-full py-3">
-                      <img src="assets/images/brands/ayroui.svg" alt="ayroui" />
-                    </div>
-                    <div className="mr-4 w-full py-3">
-                      <img
-                        src="assets/images/brands/graygrids.svg"
-                        alt="graygrids"
-                      />
-                    </div>
-                    <div className="mr-4 w-full py-3">
-                      <img src="assets/images/brands/uideck.svg" alt="uideck" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <>
+      <section className="bg-gray-800 text-gray-100 h-screen">
+        <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+          <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
+            <h1 className="text-5xl font-bold leading-none sm:text-6xl">
+              <span className="text-violet-400 mr-2">Callum</span>
+              Macalast
+            </h1>
+            <p className="mt-6 mb-8 text-lg sm:mb-12">
+              A self-taught full-stack web developer, with a passion for
+              anything tech!
+            </p>
+            <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
+              <Link href="/about">
+                <a
+                  rel="noopener noreferrer"
+                  className="px-8 py-3 text-lg font-semibold rounded bg-violet-400 border-violet-400 text-gray-900 hover:border-gray-100 hover:bg-none"
+                >
+                  About Me
+                </a>
+              </Link>
+              <Link href="/projects">
+                <a
+                  rel="noopener noreferrer"
+                  className="px-8 py-3 text-lg font-semibold border rounded border-gray-100 hover:bg-violet-400 hover:text-gray-900 hover:border-violet-400 transition"
+                >
+                  My Work
+                </a>
+              </Link>
             </div>
-            <div className="hidden px-4 lg:block lg:w-1/12"></div>
-            <div className="w-full px-4 lg:w-6/12">
-              <div className="lg:ml-auto lg:text-right">
-                <div className="relative z-10 inline-block pt-11 lg:pt-0">
-                  <span className="absolute -left-8 -bottom-8 z-[-1]">
-                    <svg
-                      width="93"
-                      height="93"
-                      viewBox="0 0 93 93"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle cx="2.5" cy="2.5" r="2.5" fill="#3056D3" />
-                      <circle cx="2.5" cy="24.5" r="2.5" fill="#3056D3" />
-                      <circle cx="2.5" cy="46.5" r="2.5" fill="#3056D3" />
-                      <circle cx="2.5" cy="68.5" r="2.5" fill="#3056D3" />
-                      <circle cx="2.5" cy="90.5" r="2.5" fill="#3056D3" />
-                      <circle cx="24.5" cy="2.5" r="2.5" fill="#3056D3" />
-                      <circle cx="24.5" cy="24.5" r="2.5" fill="#3056D3" />
-                      <circle cx="24.5" cy="46.5" r="2.5" fill="#3056D3" />
-                      <circle cx="24.5" cy="68.5" r="2.5" fill="#3056D3" />
-                      <circle cx="24.5" cy="90.5" r="2.5" fill="#3056D3" />
-                      <circle cx="46.5" cy="2.5" r="2.5" fill="#3056D3" />
-                      <circle cx="46.5" cy="24.5" r="2.5" fill="#3056D3" />
-                      <circle cx="46.5" cy="46.5" r="2.5" fill="#3056D3" />
-                      <circle cx="46.5" cy="68.5" r="2.5" fill="#3056D3" />
-                      <circle cx="46.5" cy="90.5" r="2.5" fill="#3056D3" />
-                      <circle cx="68.5" cy="2.5" r="2.5" fill="#3056D3" />
-                      <circle cx="68.5" cy="24.5" r="2.5" fill="#3056D3" />
-                      <circle cx="68.5" cy="46.5" r="2.5" fill="#3056D3" />
-                      <circle cx="68.5" cy="68.5" r="2.5" fill="#3056D3" />
-                      <circle cx="68.5" cy="90.5" r="2.5" fill="#3056D3" />
-                      <circle cx="90.5" cy="2.5" r="2.5" fill="#3056D3" />
-                      <circle cx="90.5" cy="24.5" r="2.5" fill="#3056D3" />
-                      <circle cx="90.5" cy="46.5" r="2.5" fill="#3056D3" />
-                      <circle cx="90.5" cy="68.5" r="2.5" fill="#3056D3" />
-                      <circle cx="90.5" cy="90.5" r="2.5" fill="#3056D3" />
-                    </svg>
-                  </span>
-                </div>
-              </div>
+          </div>
+          <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+            <img
+              src="/img/Business_SVG.svg"
+              alt=""
+              layout="fill"
+              className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
+            />
+          </div>
+        </div>
+        <div className="container mx-auto flex flex-col items-center justify-center p-4 space-y-8 md:p-10 lg:space-y-0 lg:flex-row lg:justify-between">
+          <h1 className="text-3xl font-semibold leading-tight text-center lg:text-left">
+            Nobis a dolores, quia sit ad quasi dolorem in?
+          </h1>
+          <button className="px-8 py-3 text-lg font-semibold rounded bg-violet-400 text-gray-900">
+            Contact Me
+          </button>
+        </div>
+      </section>
+      <section className="p-6 my-6 bg-gray-800 text-gray-100">
+        <div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
+          <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-gray-900 text-gray-100">
+            <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 bg-violet-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="currentColor"
+                className="h-9 w-9 text-gray-800"
+              >
+                <polygon points="160 96.039 160 128.039 464 128.039 464 191.384 428.5 304.039 149.932 304.039 109.932 16 16 16 16 48 82.068 48 122.068 336.039 451.968 336.039 496 196.306 496 96.039 160 96.039"></polygon>
+                <path d="M176.984,368.344a64.073,64.073,0,0,0-64,64h0a64,64,0,0,0,128,0h0A64.072,64.072,0,0,0,176.984,368.344Zm0,96a32,32,0,1,1,32-32A32.038,32.038,0,0,1,176.984,464.344Z"></path>
+                <path d="M400.984,368.344a64.073,64.073,0,0,0-64,64h0a64,64,0,0,0,128,0h0A64.072,64.072,0,0,0,400.984,368.344Zm0,96a32,32,0,1,1,32-32A32.038,32.038,0,0,1,400.984,464.344Z"></path>
+              </svg>
+            </div>
+            <div className="flex flex-col justify-center align-middle">
+              <p className="text-3xl font-semibold leading-none">200</p>
+              <p className="capitalize">Orders</p>
+            </div>
+          </div>
+          <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-gray-900 text-gray-100">
+            <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 bg-violet-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="currentColor"
+                className="h-9 w-9 text-gray-800"
+              >
+                <path d="M256,16C123.452,16,16,123.452,16,256S123.452,496,256,496,496,388.548,496,256,388.548,16,256,16ZM403.078,403.078a207.253,207.253,0,1,1,44.589-66.125A207.332,207.332,0,0,1,403.078,403.078Z"></path>
+                <path d="M256,384A104,104,0,0,0,360,280H152A104,104,0,0,0,256,384Z"></path>
+                <polygon points="205.757 228.292 226.243 203.708 168 155.173 109.757 203.708 130.243 228.292 168 196.827 205.757 228.292"></polygon>
+                <polygon points="285.757 203.708 306.243 228.292 344 196.827 381.757 228.292 402.243 203.708 344 155.173 285.757 203.708"></polygon>
+              </svg>
+            </div>
+            <div className="flex flex-col justify-center align-middle">
+              <p className="text-3xl font-semibold leading-none">7500</p>
+              <p className="capitalize">New customers</p>
+            </div>
+          </div>
+          <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-gray-900 text-gray-100">
+            <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 bg-violet-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="currentColor"
+                className="h-9 w-9 text-gray-800"
+              >
+                <path d="M425.706,142.294A240,240,0,0,0,16,312v88H160V368H48V312c0-114.691,93.309-208,208-208s208,93.309,208,208v56H352v32H496V312A238.432,238.432,0,0,0,425.706,142.294Z"></path>
+                <rect width="32" height="32" x="80" y="264"></rect>
+                <rect width="32" height="32" x="240" y="128"></rect>
+                <rect width="32" height="32" x="136" y="168"></rect>
+                <rect width="32" height="32" x="400" y="264"></rect>
+                <path d="M297.222,335.1l69.2-144.173-28.85-13.848L268.389,321.214A64.141,64.141,0,1,0,297.222,335.1ZM256,416a32,32,0,1,1,32-32A32.036,32.036,0,0,1,256,416Z"></path>
+              </svg>
+            </div>
+            <div className="flex flex-col justify-center align-middle">
+              <p className="text-3xl font-semibold leading-none">172%</p>
+              <p className="capitalize">Growth</p>
+            </div>
+          </div>
+          <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-gray-900 text-gray-100">
+            <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 bg-violet-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="currentColor"
+                className="h-9 w-9 text-gray-800"
+              >
+                <path d="M454.423,278.957,328,243.839v-8.185a116,116,0,1,0-104,0V312H199.582l-18.494-22.6a90.414,90.414,0,0,0-126.43-13.367,20.862,20.862,0,0,0-8.026,33.47L215.084,496H472V302.08A24.067,24.067,0,0,0,454.423,278.957ZM192,132a84,84,0,1,1,136,65.9V132a52,52,0,0,0-104,0v65.9A83.866,83.866,0,0,1,192,132ZM440,464H229.3L79.141,297.75a58.438,58.438,0,0,1,77.181,11.91l28.1,34.34H256V132a20,20,0,0,1,40,0V268.161l144,40Z"></path>
+              </svg>
+            </div>
+            <div className="flex flex-col justify-center align-middle">
+              <p className="text-3xl font-semibold leading-none">17%</p>
+              <p className="capitalize">Bounce rate</p>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  );
+      </section>
+    </>
+  )
 }
 
 export async function getStaticProps() {
@@ -153,14 +153,14 @@ export async function getStaticProps() {
         }
       }
     }
-  `;
+  `
   const response = await client.query({
     query: GET_POSTS,
-  });
-  const posts = response?.data?.posts?.nodes;
+  })
+  const posts = response?.data?.posts?.nodes
   return {
     props: {
       posts,
     },
-  };
+  }
 }

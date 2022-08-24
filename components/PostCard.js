@@ -1,9 +1,9 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 export default function PostCard({ post }) {
-  console.log(post);
+  console.log(post)
   return (
-    <Link href={`/posts/${post.uri}`} className={"card"}>
+    <Link href={`/posts/${post.uri}`} className={'card'}>
       <div className="w-full md:w-1/2 lg:w-1/3 px-4">
         <div className="max-w-[370px] mx-auto mb-10">
           <div className="rounded overflow-hidden mb-8">
@@ -32,10 +32,13 @@ export default function PostCard({ post }) {
               {post.date}
             </span>
             <h3 className="text-dark">{post.title}</h3>
-            <p className="text-base text-body-color">{post.excerpt}</p>
+            <p
+              className="text-base text-body-color"
+              dangerouslySetInnerHTML={{ __html: post.excerpt }}
+            />
           </div>
         </div>
       </div>
     </Link>
-  );
+  )
 }

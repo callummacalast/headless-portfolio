@@ -1,19 +1,21 @@
-import Link from "next/link";
-import React from "react";
-import { useState } from "react";
+import Link from 'next/link'
+import React from 'react'
+import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 const Navbar = () => {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(false)
+  const router = useRouter()
 
   const handleClick = () => {
-    setActive(!active);
-  };
+    setActive(!active)
+  }
 
   return (
-    <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5  dark:bg-gray-800">
-      <div className="container flex flex-wrap  justify-between items-center mx-auto">
+    <nav className="bg-gray-9000 border-gray-200 px-2 sm:px-4 py-2.5  text-gray-100">
+      <div className="container flex flex-wrap  justify-between items-center mx-auto py-5">
         <Link href="/">
-          <a href="/" className="flex items-center">
+          <a href="/" className="flex items-center ">
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
               Callum Macalast
             </span>
@@ -55,37 +57,63 @@ const Navbar = () => {
           </svg>
         </button>
         <div
-          className={`${active ? "" : "hidden"}  w-full md:block md:w-auto`}
+          className={`${active ? '' : 'hidden'}  w-full md:block md:w-auto`}
           id="mobile-menu"
         >
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
             <Link href="/">
               <a
-                className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                className={`${
+                  router.pathname == '/'
+                    ? 'block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-violet-400 md:p-0'
+                    : 'block py-2 pr-4 pl-3 text-gray-100 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-violet-400 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
+                }`}
                 aria-current="page"
               >
                 Home
               </a>
             </Link>
             <Link href="/about">
-              <a className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+              <a
+                className={`${
+                  router.pathname == '/about'
+                    ? 'block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-violet-400 md:p-0 dark:text-white'
+                    : 'block py-2 pr-4 pl-3 text-gray-100 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
+                }`}
+              >
                 About
               </a>
             </Link>
             <Link href="/projects">
-              <a className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+              <a
+                className={`${
+                  router.pathname == '/projects'
+                    ? 'block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-violet-400 md:p-0 dark:text-white'
+                    : 'block py-2 pr-4 pl-3 text-gray-100 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
+                }`}
+              >
                 Projects
               </a>
             </Link>
             <Link href="../posts">
-              <a className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+              <a
+                className={`${
+                  router.pathname == '/posts'
+                    ? 'block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-violet-400 md:p-0 dark:text-white'
+                    : 'block py-2 pr-4 pl-3 text-gray-100 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
+                }`}
+              >
                 Posts
               </a>
             </Link>
             <Link href="/contact">
               <a
                 href="/contact"
-                className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className={`${
+                  router.pathname == '/contact'
+                    ? 'block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-violet-400 md:p-0 dark:text-white'
+                    : 'block py-2 pr-4 pl-3 text-gray-100 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
+                }`}
               >
                 Contact
               </a>
@@ -94,7 +122,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

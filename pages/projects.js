@@ -1,49 +1,162 @@
-import React from "react";
-import { client } from "../lib/apollo";
-import { gql } from "@apollo/client";
-import ProjectCard from "../components/ProjectCard";
+import React from 'react'
+import { client } from '../lib/apollo'
+import { gql } from '@apollo/client'
+import ProjectCard from '../components/ProjectCard'
 
 const projects = ({ projects }) => {
   return (
-    <section className="pt-20 lg:pt-[120px] pb-10 lg:pb-20">
-      <div className="container">
-        <div className="flex flex-wrap justify-center">
-          <div className="w-full px-4">
-            <div className="text-center mx-auto mb-[60px] lg:mb-20 max-w-[510px]">
-              <span className="font-semibold text-lg text-primary mb-2 block">
-                My projects
-              </span>
-              <h2
-                className="
-                      font-bold
-                      text-3xl
-                      sm:text-4xl
-                      md:text-[40px]
-                      text-dark
-                      mb-4
-                      "
-              >
-                Projects
-              </h2>
-              <p className="text-base text-body-color">
-                These are some of our blog posts
-              </p>
-            </div>
-          </div>
+    <section className="py-6 sm:py-12 dark:bg-gray-800 dark:text-gray-100">
+      <div className="container p-6 mx-auto space-y-8">
+        <div className="space-y-2 text-center">
+          <h2 className="text-3xl font-bold">Partem reprimique an pro</h2>
+          <p className="font-serif text-sm dark:text-gray-400">
+            Qualisque erroribus usu at, duo te agam soluta mucius.
+          </p>
         </div>
-        <div className="flex flex-wrap">
-          {projects.map((project) => {
-            return (
-              <ProjectCard key={project.uri} project={project}></ProjectCard>
-            );
-          })}
+        <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+          <article className="flex flex-col bg-gray-900">
+            <a
+              rel="noopener noreferrer"
+              href="#"
+              aria-label="Te nulla oportere reprimique his dolorum"
+            >
+              <img
+                alt=""
+                className="object-cover w-full h-52 dark:bg-gray-500"
+                src="https://source.unsplash.com/200x200/?fashion?1"
+              />
+            </a>
+            <div className="flex flex-col flex-1 p-6">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                aria-label="Te nulla oportere reprimique his dolorum"
+              ></a>
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                className="text-xs tracking-wider uppercase hover:underline dark:text-violet-400"
+              >
+                Convenire
+              </a>
+              <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
+                Te nulla oportere reprimique his dolorum
+              </h3>
+              <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
+                <span>June 1, 2020</span>
+                <span>2.1K views</span>
+              </div>
+            </div>
+          </article>
+          <article className="flex flex-col bg-gray-900">
+            <a
+              rel="noopener noreferrer"
+              href="#"
+              aria-label="Te nulla oportere reprimique his dolorum"
+            >
+              <img
+                alt=""
+                className="object-cover w-full h-52 dark:bg-gray-500"
+                src="https://source.unsplash.com/200x200/?fashion?2"
+              />
+            </a>
+            <div className="flex flex-col flex-1 p-6">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                aria-label="Te nulla oportere reprimique his dolorum"
+              ></a>
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                className="text-xs tracking-wider uppercase hover:underline dark:text-violet-400"
+              >
+                Convenire
+              </a>
+              <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
+                Te nulla oportere reprimique his dolorum
+              </h3>
+              <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
+                <span>June 2, 2020</span>
+                <span>2.2K views</span>
+              </div>
+            </div>
+          </article>
+          <article className="flex flex-col bg-gray-900">
+            <a
+              rel="noopener noreferrer"
+              href="#"
+              aria-label="Te nulla oportere reprimique his dolorum"
+            >
+              <img
+                alt=""
+                className="object-cover w-full h-52 dark:bg-gray-500"
+                src="https://source.unsplash.com/200x200/?fashion?3"
+              />
+            </a>
+            <div className="flex flex-col flex-1 p-6">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                aria-label="Te nulla oportere reprimique his dolorum"
+              ></a>
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                className="text-xs tracking-wider uppercase hover:underline dark:text-violet-400"
+              >
+                Convenire
+              </a>
+              <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
+                Te nulla oportere reprimique his dolorum
+              </h3>
+              <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
+                <span>June 3, 2020</span>
+                <span>2.3K views</span>
+              </div>
+            </div>
+          </article>
+          <article className="flex flex-col bg-gray-900">
+            <a
+              rel="noopener noreferrer"
+              href="#"
+              aria-label="Te nulla oportere reprimique his dolorum"
+            >
+              <img
+                alt=""
+                className="object-cover w-full h-52 dark:bg-gray-500"
+                src="https://source.unsplash.com/200x200/?fashion?4"
+              />
+            </a>
+            <div className="flex flex-col flex-1 p-6">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                aria-label="Te nulla oportere reprimique his dolorum"
+              ></a>
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                className="text-xs tracking-wider uppercase hover:underline dark:text-violet-400"
+              >
+                Convenire
+              </a>
+              <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
+                Te nulla oportere reprimique his dolorum
+              </h3>
+              <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
+                <span>June 4, 2020</span>
+                <span>2.4K views</span>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default projects;
+export default projects
 
 export async function getStaticProps() {
   const GET_PROJECTS = gql`
@@ -57,15 +170,15 @@ export async function getStaticProps() {
         }
       }
     }
-  `;
+  `
   const response = await client.query({
     query: GET_PROJECTS,
-  });
-  const projects = response?.data?.projects?.nodes;
-  console.log(projects);
+  })
+  const projects = response?.data?.projects?.nodes
+  console.log(projects)
   return {
     props: {
       projects,
     },
-  };
+  }
 }
