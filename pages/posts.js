@@ -2,6 +2,7 @@ import React from 'react'
 import { client } from '../lib/apollo'
 import { gql } from '@apollo/client'
 import PostCard from '../components/PostCard'
+import Link from 'next/link'
 
 const posts = ({ posts }) => {
   console.log(posts)
@@ -128,40 +129,42 @@ const posts = ({ posts }) => {
 
               let postDate = new Date(mydate).toLocaleDateString()
               return (
-                <article key={index} className="flex flex-col bg-gray-900">
-                  <a
-                    rel="noopener noreferrer"
-                    href="#"
-                    aria-label="Te nulla oportere reprimique his dolorum"
-                  >
-                    <img
-                      alt=""
-                      className="object-cover w-full h-52 bg-gray-500"
-                      src="https://source.unsplash.com/200x200/?fashion?1"
-                    />
-                  </a>
-                  <div className="flex flex-col flex-1 p-6">
+                <Link key={index} href={`/posts${post?.uri}`}>
+                  <article className="flex flex-col bg-gray-900 hover:animate-pulse">
                     <a
                       rel="noopener noreferrer"
                       href="#"
                       aria-label="Te nulla oportere reprimique his dolorum"
-                    ></a>
-                    <a
-                      rel="noopener noreferrer"
-                      href="#"
-                      className="text-xs tracking-wider uppercase hover:underline text-violet-400"
                     >
-                      {post.categories.nodes.map((cat) => `${cat.name},`)}
+                      <img
+                        alt=""
+                        className="object-cover w-full h-52 bg-gray-500"
+                        src="https://source.unsplash.com/200x200/?fashion?1"
+                      />
                     </a>
-                    <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
-                      {post?.title}
-                    </h3>
-                    <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-400">
-                      <span>{postDate}</span>
-                      <span>2.1K views</span>
+                    <div className="flex flex-col flex-1 p-6">
+                      <a
+                        rel="noopener noreferrer"
+                        href="#"
+                        aria-label="Te nulla oportere reprimique his dolorum"
+                      ></a>
+                      <a
+                        rel="noopener noreferrer"
+                        href="#"
+                        className="text-xs tracking-wider uppercase hover:underline text-violet-400"
+                      >
+                        {post.categories.nodes.map((cat) => `${cat.name},`)}
+                      </a>
+                      <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
+                        {post?.title}
+                      </h3>
+                      <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-400">
+                        <span>{postDate}</span>
+                        <span>2.1K views</span>
+                      </div>
                     </div>
-                  </div>
-                </article>
+                  </article>
+                </Link>
               )
             })}
           </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import { client } from '../lib/apollo'
 import { gql } from '@apollo/client'
 import ProjectCard from '../components/ProjectCard'
+import Link from 'next/link'
 
 const projects = ({ projects }) => {
   console.log(projects)
@@ -16,40 +17,42 @@ const projects = ({ projects }) => {
         </div>
         <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
           {projects.map((p, index) => (
-            <article className="flex flex-col bg-gray-900">
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                aria-label="Te nulla oportere reprimique his dolorum"
-              >
-                <img
-                  alt=""
-                  className="object-cover w-full h-52 bg-gray-500"
-                  src="https://source.unsplash.com/200x200/?fashion?1"
-                />
-              </a>
-              <div className="flex flex-col flex-1 p-6">
+            <Link href={`${p?.uri}`}>
+              <article className="flex flex-col bg-gray-900">
                 <a
                   rel="noopener noreferrer"
                   href="#"
                   aria-label="Te nulla oportere reprimique his dolorum"
-                ></a>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="text-xs tracking-wider uppercase hover:underline text-violet-400"
                 >
-                  {p?.date}
+                  <img
+                    alt=""
+                    className="object-cover w-full h-52 bg-gray-500"
+                    src="https://source.unsplash.com/200x200/?fashion?1"
+                  />
                 </a>
-                <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
-                  {p?.title}
-                </h3>
-                <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-400">
-                  <span>June 1, 2020</span>
-                  <span>2.1K views</span>
+                <div className="flex flex-col flex-1 p-6">
+                  <a
+                    rel="noopener noreferrer"
+                    href="#"
+                    aria-label="Te nulla oportere reprimique his dolorum"
+                  ></a>
+                  <a
+                    rel="noopener noreferrer"
+                    href="#"
+                    className="text-xs tracking-wider uppercase hover:underline text-violet-400"
+                  >
+                    {p?.date}
+                  </a>
+                  <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
+                    {p?.title}
+                  </h3>
+                  <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-400">
+                    <span>June 1, 2020</span>
+                    <span>2.1K views</span>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </Link>
           ))}
         </div>
       </div>
