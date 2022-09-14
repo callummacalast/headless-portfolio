@@ -1,16 +1,16 @@
-import React from 'react'
-import { client } from '../lib/apollo'
-import { gql } from '@apollo/client'
-import ProjectCard from '../components/ProjectCard'
-import Link from 'next/link'
+import React from 'react';
+import { client } from '../lib/apollo';
+import { gql } from '@apollo/client';
+import ProjectCard from '../components/ProjectCard';
+import Link from 'next/link';
 
 const projects = ({ projects }) => {
-  console.log(projects)
+  console.log(projects);
   return (
     <section className="py-6 sm:py-12 bg-gray-800 text-gray-100">
       <div className="container p-6 mx-auto space-y-8">
         <div className="space-y-2 text-center">
-          <h2 className="text-3xl font-bold">Partem reprimique an pro</h2>
+          <h2 className="text-3xl font-bold">Work I have done</h2>
           <p className="font-serif text-sm text-gray-400">
             Qualisque erroribus usu at, duo te agam soluta mucius.
           </p>
@@ -57,10 +57,10 @@ const projects = ({ projects }) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default projects
+export default projects;
 
 export async function getStaticProps() {
   const GET_PROJECTS = gql`
@@ -74,15 +74,15 @@ export async function getStaticProps() {
         }
       }
     }
-  `
+  `;
   const response = await client.query({
     query: GET_PROJECTS,
-  })
-  const projects = response?.data?.projects?.nodes
-  console.log(projects)
+  });
+  const projects = response?.data?.projects?.nodes;
+  console.log(projects);
   return {
     props: {
       projects,
     },
-  }
+  };
 }

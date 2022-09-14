@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const about = () => {
   return (
@@ -7,21 +7,18 @@ const about = () => {
         <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl text-gray-50">
-              Aliquip definiebas ad est
+              About me
             </h2>
-            <p className="max-w-3xl mx-auto mt-4 text-xl text-center text-gray-400">
-              Quando cetero his ne, eum admodum sapientem ut.
-            </p>
           </div>
           <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
             <div>
               <h3 className="text-2xl font-bold tracking-tight sm:text-3xl text-gray-50">
-                Ad vix debet docendi
+                Callum Macalast at a glance
               </h3>
               <p className="mt-3 text-lg text-gray-400">
-                Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos
-                etiam regione ut, persius eripuit quo id. Sit te euismod
-                tacimates.
+                Website development has always been a passion of mine from, from
+                a young age anything and everything tech got me thinking -{' '}
+                <span className="italic"> 'How does that work?'</span>.
               </p>
               <div className="mt-12 space-y-12">
                 <div className="flex">
@@ -45,12 +42,11 @@ const about = () => {
                   </div>
                   <div className="ml-4">
                     <h4 className="text-lg font-medium leading-6 text-gray-50">
-                      Per ei quaeque sensibus
+                      4+ Years of web development
                     </h4>
                     <p className="mt-2 text-gray-400">
-                      Ex usu illum iudico molestie. Pro ne agam facete
-                      mediocritatem, ridens labore facete mea ei. Pro id
-                      apeirian dignissim.
+                      I have been building and creating websites for the past 4+
+                      years, ranging from various different tech
                     </p>
                   </div>
                 </div>
@@ -75,12 +71,12 @@ const about = () => {
                   </div>
                   <div className="ml-4">
                     <h4 className="text-lg font-medium leading-6 text-gray-50">
-                      Cu imperdiet posidonium sed
+                      A keen surfer and skateboarder
                     </h4>
                     <p className="mt-2 text-gray-400">
-                      Amet utinam aliquando ut mea, malis admodum ocurreret nec
-                      et, elit tibique cu nec. Nec ex maluisset inciderint, ex
-                      quis.
+                      I started surfing just as I learnt to walk, from there, I
+                      never looked back. Both hobbies are great time consumers
+                      to which I enjoy every minute of.
                     </p>
                   </div>
                 </div>
@@ -105,12 +101,14 @@ const about = () => {
                   </div>
                   <div className="ml-4">
                     <h4 className="text-lg font-medium leading-6 text-gray-50">
-                      Nulla omittam sadipscing mel ne
+                      Travelling
                     </h4>
                     <p className="mt-2 text-gray-400">
-                      At sed possim oporteat probatus, justo graece ne nec,
-                      minim commodo legimus ut vix. Ut eos iudico quando soleat,
-                      nam modus.
+                      <span className="italic">
+                        'The action or activity of going from one place to
+                        another, typically over a distance of some length.' -
+                        Google
+                      </span>
                     </p>
                   </div>
                 </div>
@@ -118,176 +116,55 @@ const about = () => {
             </div>
             <div aria-hidden="true" className="mt-10 lg:mt-0">
               <img
-                src="https://source.unsplash.com/random/360x480"
+                src="/img/surfing.jpg"
                 alt=""
+                height="900"
                 className="mx-auto rounded-lg shadow-lg bg-gray-500"
               />
-            </div>
-          </div>
-          <div>
-            <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
-              <div className="lg:col-start-2">
-                <h3 className="text-2xl font-bold tracking-tight sm:text-3xl text-gray-50">
-                  Eam nibh gloriatur ex
-                </h3>
-                <p className="mt-3 text-lg text-gray-400">
-                  Per odio fabellas consulatu cu. Utroque detracto mel ea, quo
-                  te latine theophrastus. Ea his tale nibh dissentias, mei
-                  exerci tamquam euripidis cu.
-                </p>
-                <div className="mt-12 space-y-12">
-                  <div className="flex">
-                    <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-md bg-violet-400 text-gray-900">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          className="w-7 h-7"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M5 13l4 4L19 7"
-                          ></path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="ml-4">
-                      <h4 className="text-lg font-medium leading-6 text-gray-50">
-                        Cibo augue offendit has ad
-                      </h4>
-                      <p className="mt-2 text-gray-400">
-                        An per velit appellantur, ut utinam minimum nominavi
-                        sit, odio nostro habemus ne nec. Ne sonet regione
-                        contentiones est.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex">
-                    <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-md bg-violet-400 text-gray-900">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          className="w-7 h-7"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M5 13l4 4L19 7"
-                          ></path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="ml-4">
-                      <h4 className="text-lg font-medium leading-6 text-gray-50">
-                        At eum ferri luptatum lobortis
-                      </h4>
-                      <p className="mt-2 text-gray-400">
-                        Te per quidam maiorum ocurreret, etiam delicatissimi usu
-                        ad. Ne has quod periculis. Te sit primis iisque
-                        efficiantur.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex">
-                    <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-md bg-violet-400 text-gray-900">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          className="w-7 h-7"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M5 13l4 4L19 7"
-                          ></path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="ml-4">
-                      <h4 className="text-lg font-medium leading-6 text-gray-50">
-                        Dicunt verterem evertitur eu sea
-                      </h4>
-                      <p className="mt-2 text-gray-400">
-                        Audire principes rationibus eam an, autem nominavi
-                        luptatum per te. Sumo fabulas vim eu, sonet saperet
-                        eleifend ut vix.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-10 lg:mt-0 lg:col-start-1 lg:row-start-1">
-                <img
-                  src="https://source.unsplash.com/random/361x481"
-                  alt=""
-                  className="mx-auto rounded-lg shadow-lg bg-gray-500"
-                />
-              </div>
             </div>
           </div>
         </div>
       </section>
       <section className="bg-gray-800 text-gray-100">
         <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
-          <p className="p-2 text-sm font-medium tracking-wider text-center uppercase">
-            How it works
-          </p>
           <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">
-            Frequently Asked Questions
+            How it works
           </h2>
           <div className="flex flex-col divide-y sm:px-8 lg:px-12 xl:px-32 divide-gray-700">
             <details>
               <summary className="py-2 outline-none cursor-pointer focus:underline">
-                Optio maiores eligendi molestiae totam dolores similique?
+                You get in touch with details of what you're after
               </summary>
               <div className="px-4 pb-4">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-                  neque in fugiat magni, quas animi enim veritatis deleniti ex.
-                  Impedit.
+                  I will then spend some time reviewing what has been sent over,
+                  realistically the more you provide the more time it will take
+                  me to get back to you, however, the more I will understand
+                  what you're after.
                 </p>
               </div>
             </details>
             <details>
               <summary className="py-2 outline-none cursor-pointer focus:underline">
-                Modi dolorem veritatis culpa quos consequuntur beatae itaque
-                excepturi perspiciatis?
+                I will provide you with a quote for the project
               </summary>
               <div className="px-4 pb-4">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-                  aspernatur quae, eos explicabo odit minima libero veniam
-                  similique quibusdam doloribus facilis ipsa accusantium vel
-                  maiores corrupti! Libero voluptate a doloribus?
+                  You will then spend some time reviewing said quote, i'd
+                  imagine, the bigger the quote the longer it will take you to
+                  get back in touch.
                 </p>
               </div>
             </details>
             <details>
               <summary className="py-2 outline-none cursor-pointer focus:underline">
-                Magni reprehenderit possimus debitis?
+                If both parties are happy
               </summary>
               <div className="px-4 pb-4 space-y-2">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                  voluptates aspernatur dolores in consequatur doloremque
-                  inventore reprehenderit, consequuntur perspiciatis architecto.
-                </p>
-                <p>
-                  Sed consectetur quod tenetur! Voluptatibus culpa incidunt
-                  veritatis velit quasi cupiditate unde eaque! Iure,
-                  voluptatibus autem eaque unde possimus quae.
+                  We get down to business and you can expect nothing more than a
+                  delightful website, easy to use and doing exactly what we
+                  agreed on. That's, in a nutshell, 'How it works'!
                 </p>
               </div>
             </details>
@@ -295,7 +172,7 @@ const about = () => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default about
+export default about;

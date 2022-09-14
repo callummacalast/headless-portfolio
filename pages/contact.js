@@ -1,38 +1,38 @@
-import React from 'react'
-import { ApolloClient } from '@apollo/client'
-import { gql } from '@apollo/client'
-import { useState } from 'react'
+import React from 'react';
+import { ApolloClient } from '@apollo/client';
+import { gql } from '@apollo/client';
+import { useState } from 'react';
 
 const contact = () => {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    const form = document.getElementById('contact_form')
+    e.preventDefault();
+    const form = document.getElementById('contact_form');
     setTimeout(() => {
-      form.submit()
-    }, 3000)
-    console.log('sending')
+      form.submit();
+    }, 3000);
+    console.log('sending');
 
     let data = {
       name,
       email,
       message,
-    }
+    };
 
-    console.log(data)
+    console.log(data);
 
     fetch('/api/contact', {
       method: 'post',
       body: JSON.stringify(data),
-    })
+    });
 
-    setEmail('')
-    setName('')
-    setMessage('')
-  }
+    setEmail('');
+    setName('');
+    setMessage('');
+  };
   return (
     <section className="relative  z-10 overflow-hidden  py-20 lg:py-[80px]">
       <div className="container mx-auto">
@@ -125,7 +125,7 @@ const contact = () => {
                     type="text"
                     placeholder="Your Name"
                     onChange={(e) => {
-                      setName(e.target.value)
+                      setName(e.target.value);
                     }}
                     value={name}
                     className="border-[f0f0f0] w-full rounded border py-3 px-[14px] text-base text-body-color outline-none focus:border-primary focus-visible:shadow-none"
@@ -136,7 +136,7 @@ const contact = () => {
                     type="email"
                     placeholder="Your Email"
                     onChange={(e) => {
-                      setEmail(e.target.value)
+                      setEmail(e.target.value);
                     }}
                     value={email}
                     required
@@ -149,7 +149,7 @@ const contact = () => {
                     rows="6"
                     placeholder="Your Message"
                     onChange={(e) => {
-                      setMessage(e.target.value)
+                      setMessage(e.target.value);
                     }}
                     value={message}
                     className="border-[f0f0f0] w-full resize-none rounded border py-3 px-[14px] text-base text-body-color outline-none focus:border-primary focus-visible:shadow-none"
@@ -159,7 +159,7 @@ const contact = () => {
                   <button
                     type="submit"
                     onClick={(e) => {
-                      handleSubmit(e)
+                      handleSubmit(e);
                     }}
                     className="w-full rounded border border-primary bg-primary p-3 text-white transition hover:bg-opacity-90"
                   >
@@ -228,7 +228,7 @@ const contact = () => {
         </form>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default contact
+export default contact;
