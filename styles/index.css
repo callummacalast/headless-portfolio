@@ -2,7 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+.post-image {
+  background-image: url('https://source.unsplash.com/random/640x480');
+  background-position: center center;
+  background-blend-mode: multiply;
+  background-size: cover;
+}
 
-.post-image{
-    background-image: url('https://source.unsplash.com/random/640x480'); background-position: center center; background-blend-mode: multiply; background-size: cover;
+.wp-block-gallery {
+  @apply grid lg:grid-cols-2  justify-between gap-5 my-10;
+}
+.wp-block-gallery .wp-block-image img {
+  @apply rounded shadow;
+}
+
+.wp-block-media-text {
+  @apply grid xl:grid-cols-2 gap-5 my-10;
+}
+
+.wp-block-media-text .wp-block-media-text__media img {
+  @apply rounded shadow  object-cover;
+}
+
+.wp-block-media-text .wp-block-media-text__content {
+  @apply flex items-center;
+}
+
+.single-post article p {
+  @apply my-2;
 }

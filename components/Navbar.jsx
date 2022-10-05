@@ -72,6 +72,13 @@ const Navbar = () => {
                 aria-current="page"
               >
                 Home
+                <span
+                  className={`${
+                    router.pathname == '/' ? 'text-white' : 'text-violet-400'
+                  }`}
+                >
+                  .
+                </span>
               </a>
             </Link>
             <Link href="/about">
@@ -83,6 +90,15 @@ const Navbar = () => {
                 }`}
               >
                 About
+                <span
+                  className={`${
+                    router.pathname == '/about'
+                      ? 'text-white'
+                      : 'text-violet-400'
+                  }`}
+                >
+                  .
+                </span>
               </a>
             </Link>
             <Link href="/projects">
@@ -97,8 +113,8 @@ const Navbar = () => {
                 <span
                   className={`${
                     router.pathname == '/projects'
-                      ? 'text-violet-400'
-                      : 'text-white'
+                      ? 'text-white'
+                      : 'text-violet-400'
                   }`}
                 >
                   .
@@ -114,6 +130,15 @@ const Navbar = () => {
                 }`}
               >
                 Posts
+                <span
+                  className={`${
+                    router.pathname == '/posts'
+                      ? 'text-white'
+                      : 'text-violet-400'
+                  }`}
+                >
+                  .
+                </span>
               </a>
             </Link>
             <Link href="/contact">
@@ -126,6 +151,15 @@ const Navbar = () => {
                 }`}
               >
                 Contact
+                <span
+                  className={`${
+                    router.pathname == '/contact'
+                      ? 'text-white'
+                      : 'text-violet-400'
+                  }`}
+                >
+                  .
+                </span>
               </a>
             </Link>
           </ul>

@@ -6,19 +6,18 @@ import { gql } from '@apollo/client';
 
 export default function SlugPage({ post }) {
   return (
-    <div>
+    <div className="single-post mx-5">
       <Head>
         <title>{post.title}</title>
         <link rel="icon" href="favicon.ico"></link>
       </Head>
 
       <div className="siteHeader">
-        <h1 className="title text-3xl font-bold">
+        <h1 className="title text-3xl font-bold my-5">
           {post.title}
-
           <span className="text-violet-400">.</span>
         </h1>
-        <p>
+        <p className="my-5">
           ✍️ &nbsp;&nbsp;
           {`${post.author.node.firstName} ${post.author.node.lastName}`} | 🗓️
           &nbsp;&nbsp;{new Date(post.date).toLocaleDateString()}
