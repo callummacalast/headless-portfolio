@@ -1,133 +1,45 @@
-import React from 'react'
-import { client } from '../lib/apollo'
-import { gql } from '@apollo/client'
-import PostCard from '../components/PostCard'
-import Link from 'next/link'
+import React from 'react';
+import { client } from '../lib/apollo';
+import { gql } from '@apollo/client';
+import PostCard from '../components/PostCard';
+import Link from 'next/link';
 
-const posts = ({ posts }) => {
-  console.log(posts)
+const posts = ({ posts, categories, cat_posts }) => {
+  const filterByCat = (e) => {
+    let category_id = e.currentTarget.id;
 
+    console.log(category_id);
+    if (category_id) {
+    }
+  };
   return (
     <>
-      <div className="bg-gray-800 text-gray-50">
-        <div className="container grid grid-cols-12 mx-auto">
-          <div className="post-image flex flex-col justify-center col-span-12 align-middle bg-no-repeat bg-cover bg-gray-700 lg:col-span-6 lg:h-auto">
-            <div className="flex flex-col items-center p-8 py-12 text-center">
-              <span>12 June</span>
-              <h1 className="py-4 text-5xl font-bold">
-                Lorem, ipsum dolor sit amet consectetur adipisicing.
-              </h1>
-              <p className="pb-6">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
-                a!
-              </p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-7 h-7"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </div>
-          </div>
-          <div className="flex flex-col col-span-12 p-6 divide-y lg:col-span-6 lg:p-10 divide-gray-700">
-            <div className="pt-6 pb-4 space-y-2">
-              <span>12 June</span>
-              <h1 className="text-3xl font-bold">Lorem ipsum dolor sit.</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
-                a!
-              </p>
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="inline-flex items-center py-2 space-x-2 text-sm text-violet-400"
-              >
-                <span>Read more</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  className="w-4 h-4"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </a>
-            </div>
-            <div className="pt-6 pb-4 space-y-2">
-              <span>12 June</span>
-              <h1 className="text-3xl font-bold">Lorem ipsum dolor sit.</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
-                a!
-              </p>
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="inline-flex items-center py-2 space-x-2 text-sm text-violet-400"
-              >
-                <span>Read more</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  className="w-4 h-4"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </a>
-            </div>
-            <div className="pt-6 pb-4 space-y-2">
-              <span>12 June</span>
-              <h1 className="text-3xl font-bold">Lorem ipsum dolor sit.</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
-                a!
-              </p>
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="inline-flex items-center py-2 space-x-2 text-sm text-violet-400"
-              >
-                <span>Read more</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  className="w-4 h-4"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
       <section className="py-6 sm:py-12 bg-gray-800 text-gray-100">
+        <h2 className="text-xl font-extrabold text-center">
+          Blog<span className="text-violet-400">.</span>
+        </h2>
+        {/* <div className="filters flex justify-center">
+          {categories.map((cat, index) => {
+            console.log(cat.node.name);
+            return (
+              <button
+                onClick={filterByCat}
+                className="bg-violet-400 m-3 p-3 rounded shadow hover:bg-transparent hover:border-violet"
+                key={index}
+                id={cat.node.slug}
+              >
+                {cat?.node?.name}
+              </button>
+            );
+          })}
+        </div> */}
         <div className="container p-6 mx-auto space-y-8">
           <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
             {posts.map((post, index) => {
-              let mydate = new Date(post.date)
+              let mydate = new Date(post.date);
               // mydate.toLocaleTimeString()
-
-              let postDate = new Date(mydate).toLocaleDateString()
+              console.log(post);
+              let postDate = new Date(mydate).toLocaleDateString();
               return (
                 <Link key={index} href={`/posts${post?.uri}`}>
                   <article className="flex flex-col bg-gray-900 hover:animate-pulse">
@@ -136,11 +48,21 @@ const posts = ({ posts }) => {
                       href="#"
                       aria-label="Te nulla oportere reprimique his dolorum"
                     >
-                      <img
-                        alt=""
-                        className="object-cover w-full h-52 bg-gray-500"
-                        src="https://source.unsplash.com/200x200/?fashion?1"
-                      />
+                      {post.featuredImage ? (
+                        <img
+                          alt=""
+                          className="object-cover w-full h-52 bg-gray-500"
+                          // src="https://source.unsplash.com/200x200/?fashion?1"
+                          src={post?.featuredImage?.node?.sourceUrl}
+                        />
+                      ) : (
+                        <img
+                          alt=""
+                          className="object-cover w-full h-52 bg-gray-500"
+                          src="/img/surfing.jpg"
+                          // src={post?.featuredImage?.node?.sourceUrl}
+                        />
+                      )}
                     </a>
                     <div className="flex flex-col flex-1 p-6">
                       <a
@@ -151,30 +73,30 @@ const posts = ({ posts }) => {
                       <a
                         rel="noopener noreferrer"
                         href="#"
-                        className="text-xs tracking-wider uppercase hover:underline text-violet-400"
+                        className="text-xs tracking-wider uppercase text-violet-400"
                       >
-                        {post.categories.nodes.map((cat) => `${cat.name},`)}
+                        {post.categories.nodes.map((cat) => `${cat.name}, `)}
                       </a>
                       <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
                         {post?.title}
                       </h3>
                       <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-400">
                         <span>{postDate}</span>
-                        <span>2.1K views</span>
+                        {/* <span>2.1K views</span> */}
                       </div>
                     </div>
                   </article>
                 </Link>
-              )
+              );
             })}
           </div>
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default posts
+export default posts;
 
 export async function getStaticProps() {
   const GET_POSTS = gql`
@@ -191,17 +113,63 @@ export async function getStaticProps() {
               name
             }
           }
+          featuredImage {
+            node {
+              sourceUrl
+              uri
+            }
+          }
         }
       }
     }
-  `
+  `;
+
+  const GET_CATEGORIES = gql`
+    query GetAllCategories {
+      categories {
+        edges {
+          node {
+            id
+            slug
+            name
+            uri
+          }
+        }
+      }
+    }
+  `;
+
+  const GET_SINGLE_CAT = gql`
+    query NewQuery {
+      posts(where: { categoryName: "code" }) {
+        nodes {
+          date
+          excerpt
+          link
+          title
+        }
+      }
+    }
+  `;
+
+  const cat_res = await client.query({
+    query: GET_SINGLE_CAT,
+  });
+
+  const res = await client.query({
+    query: GET_CATEGORIES,
+  });
   const response = await client.query({
     query: GET_POSTS,
-  })
-  const posts = response?.data?.posts?.nodes
+  });
+  const categories = res?.data?.categories?.edges;
+  const posts = response?.data?.posts?.nodes;
+  const cat_posts = cat_res?.data?.posts?.nodes;
   return {
     props: {
       posts,
+      categories,
+      cat_posts,
     },
-  }
+  };
 }

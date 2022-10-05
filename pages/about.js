@@ -116,10 +116,10 @@ const about = () => {
             </div>
             <div aria-hidden="true" className="mt-10 lg:mt-0">
               <img
-                src="/img/surfing.jpg"
+                src="/img/me_cal.jpg"
                 alt=""
-                height="900"
-                className="mx-auto rounded-lg shadow-lg bg-gray-500"
+                height="700"
+                className="mx-auto rounded-lg shadow-lg bg-gray-500 object-cover"
               />
             </div>
           </div>

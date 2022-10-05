@@ -38,10 +38,10 @@ export default function Home({ posts }) {
           </div>
           <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
             <img
-              src="/img/Business_SVG.svg"
+              src="/img/surfing_cal.jpg"
               alt=""
               layout="fill"
-              className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
+              className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 rounded shadow"
             />
           </div>
         </div>

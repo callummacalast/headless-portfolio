@@ -1,8 +1,8 @@
-import Head from "next/head";
-import Footer from "../../components/Footer";
-import { getPostByUri } from "../../lib/test-data";
-import { client } from "../../lib/apollo";
-import { gql } from "@apollo/client";
+import Head from 'next/head';
+import Footer from '../../components/Footer';
+import { getPostByUri } from '../../lib/test-data';
+import { client } from '../../lib/apollo';
+import { gql } from '@apollo/client';
 
 export default function SlugPage({ post }) {
   return (
@@ -13,7 +13,11 @@ export default function SlugPage({ post }) {
       </Head>
 
       <div className="siteHeader">
-        <h1 className="title">{post.title}</h1>
+        <h1 className="title text-3xl font-bold">
+          {post.title}
+
+          <span className="text-violet-400">.</span>
+        </h1>
         <p>
           ✍️ &nbsp;&nbsp;
           {`${post.author.node.firstName} ${post.author.node.lastName}`} | 🗓️
@@ -60,6 +64,6 @@ export async function getStaticPaths() {
   const paths = [];
   return {
     paths,
-    fallback: "blocking",
+    fallback: 'blocking',
   };
 }

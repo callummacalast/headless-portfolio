@@ -17,7 +17,7 @@ const projects = ({ projects }) => {
         </div>
         <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
           {projects.map((p, index) => (
-            <Link href={`${p?.uri}`}>
+            <Link href={`${p?.uri}`} key={index}>
               <article className="flex flex-col bg-gray-900">
                 <a
                   rel="noopener noreferrer"

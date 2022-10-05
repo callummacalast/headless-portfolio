@@ -1,15 +1,15 @@
-import Link from 'next/link'
-import React from 'react'
-import { useState } from 'react'
-import { useRouter } from 'next/router'
+import Link from 'next/link';
+import React from 'react';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 const Navbar = () => {
-  const [active, setActive] = useState(false)
-  const router = useRouter()
+  const [active, setActive] = useState(false);
+  const router = useRouter();
 
   const handleClick = () => {
-    setActive(!active)
-  }
+    setActive(!active);
+  };
 
   return (
     <nav className="bg-gray-9000 border-gray-200 px-2 sm:px-4 py-2.5  text-gray-100">
@@ -18,6 +18,7 @@ const Navbar = () => {
           <a href="/" className="flex items-center ">
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
               Callum Macalast
+              <span className="text-violet-400">.</span>
             </span>
           </a>
         </Link>
@@ -93,6 +94,15 @@ const Navbar = () => {
                 }`}
               >
                 Projects
+                <span
+                  className={`${
+                    router.pathname == '/projects'
+                      ? 'text-violet-400'
+                      : 'text-white'
+                  }`}
+                >
+                  .
+                </span>
               </a>
             </Link>
             <Link href="../posts">
@@ -122,7 +132,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
