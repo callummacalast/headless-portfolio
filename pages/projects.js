@@ -42,7 +42,8 @@ console.log(projects)
                     href="#"
                     className="text-xs tracking-wider uppercase hover:underline text-violet-400"
                   >
-                    {p?.date}
+
+                    {new Date(p?.date).toLocaleDateString()}
                   </a>
                   <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
                     {p?.title}
