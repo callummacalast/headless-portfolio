@@ -1,12 +1,12 @@
-import Head from "next/head";
-import Footer from "../../components/Footer";
-import { getPostByUri } from "../../lib/test-data";
-import { client } from "../../lib/apollo";
-import { gql } from "@apollo/client";
+import Head from 'next/head';
+import Footer from '../../components/Footer';
+import { getPostByUri } from '../../lib/test-data';
+import { client } from '../../lib/apollo';
+import { gql } from '@apollo/client';
 
 export default function SlugPage({ project }) {
   return (
-    <div>
+    <div className="single-project">
       <Head>
         <title>{project.title}</title>
         <link rel="icon" href="favicon.ico"></link>
@@ -66,6 +66,6 @@ export async function getStaticPaths() {
   const paths = [];
   return {
     paths,
-    fallback: "blocking",
+    fallback: 'blocking',
   };
 }

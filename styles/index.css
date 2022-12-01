@@ -31,3 +31,31 @@
 .single-post article p {
   @apply my-2;
 }
+
+.single-project {
+  @apply mx-5;
+}
+
+.wp-block-code {
+  background-color: black;
+  @apply p-2 my-3 rounded shadow;
+}
+
+.wp-block-code code {
+  font-style: italic;
+}
+
+.wp-block-embed iframe {
+  width: 100%;
+  height: 400px;
+}
+
+.wp-block-quote {
+  @apply my-3;
+}
+
+.wp-block-quote p {
+}
+.wp-block-quote cite {
+  @apply italic font-bold text-xs;
+}

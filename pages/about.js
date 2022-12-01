@@ -7,7 +7,7 @@ const about = () => {
         <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl text-gray-50">
-              About me
+              About me<span className="text-violet-400">.</span>
             </h2>
           </div>
           <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
@@ -74,9 +74,8 @@ const about = () => {
                       A keen surfer and skateboarder
                     </h4>
                     <p className="mt-2 text-gray-400">
-                      I started surfing just as I learnt to walk, from there, I
-                      never looked back. Both hobbies are great time consumers
-                      to which I enjoy every minute of.
+                      Skateboarding and surfing is a way for me to escape the
+                      life of tech and catch some downtime wherever possible!
                     </p>
                   </div>
                 </div>
@@ -125,7 +124,7 @@ const about = () => {
           </div>
         </div>
       </section>
-      <section className="bg-gray-800 text-gray-100">
+      {/* <section className="bg-gray-800 text-gray-100">
         <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
           <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">
             How it works
@@ -170,7 +169,7 @@ const about = () => {
             </details>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

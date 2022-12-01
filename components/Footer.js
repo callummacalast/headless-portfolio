@@ -1,12 +1,24 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer>
       <div className="container flex flex-col p-4 mx-auto md:p-8 lg:flex-row">
         <ul className="self-center py-6 space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:flex-1 lg:justify-start">
-          <li>About</li>
-          <li>Blog</li>
-          <li>Projects</li>
-          <li>Contact</li>
+          <Link href="/about">
+            <li className="cursor-pointer hover:text-violet-400">About</li>
+          </Link>
+          <Link href="/posts">
+            <li className="cursor-pointer hover:text-violet-400">Blog</li>
+          </Link>
+
+          <Link href="/projects">
+            <li className="cursor-pointer hover:text-violet-400">Projects</li>
+          </Link>
+
+          <Link href="/contact">
+            <li className="cursor-pointer hover:text-violet-400">Contact</li>
+          </Link>
         </ul>
         <div className="flex flex-col justify-center pt-6 lg:pt-0">
           <div className="flex justify-center space-x-4">
@@ -84,5 +96,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
