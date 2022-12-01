@@ -5,6 +5,8 @@ import { client } from '../../lib/apollo';
 import { gql } from '@apollo/client';
 
 export default function SlugPage({ project }) {
+  console.log(project)
+
   return (
     <div className="single-project">
       <Head>
@@ -12,13 +14,13 @@ export default function SlugPage({ project }) {
         <link rel="icon" href="favicon.ico"></link>
       </Head>
 
-      <div className="siteHeader">
-        <h1 className="title font-leading text-xl ">{project.title}</h1>
-        <p>
+      <div className="siteHeader ">
+        <h1 className="title font-leading text-3xl my-2 font-bold ">{project.title}</h1>
+        <p className='font-bold text-violet-400'>
           {`${project.author.node.firstName} ${project.author.node.lastName}`} |
           🗓️ &nbsp;&nbsp;{new Date(project.date).toLocaleDateString()}
         </p>
-        <p>This is an acf field woo woo{project.contactPage.phoneNumber}</p>
+    
       </div>
       <article
         className=""
@@ -41,9 +43,6 @@ export async function getStaticProps({ params }) {
             firstName
             lastName
           }
-        }
-        contactPage {
-          phoneNumber
         }
       }
     }

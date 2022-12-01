@@ -10,18 +10,19 @@
 }
 
 .wp-block-gallery {
-  @apply grid lg:grid-cols-2  justify-between gap-5 my-10;
+  @apply grid grid-cols-2 justify-between gap-5 my-10;
 }
+
 .wp-block-gallery .wp-block-image img {
   @apply rounded shadow;
 }
 
 .wp-block-media-text {
-  @apply grid xl:grid-cols-2 gap-5 my-10;
+  @apply grid grid-cols-2 gap-5 my-10;
 }
 
 .wp-block-media-text .wp-block-media-text__media img {
-  @apply rounded shadow  object-cover;
+  @apply rounded shadow object-cover;
 }
 
 .wp-block-media-text .wp-block-media-text__content {
@@ -54,8 +55,13 @@
   @apply my-3;
 }
 
-.wp-block-quote p {
-}
+.wp-block-quote p {}
+
 .wp-block-quote cite {
   @apply italic font-bold text-xs;
+}
+
+/* Project Single */
+.project-heading {
+  @apply text-2xl font-bold my-3;
 }

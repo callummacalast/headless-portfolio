@@ -11,7 +11,6 @@ export default function SlugPage({ post }) {
         <title>{post.title}</title>
         <link rel="icon" href="favicon.ico"></link>
       </Head>
-
       <div className="siteHeader">
         <h1 className="title text-3xl font-bold my-5">
           {post.title}
