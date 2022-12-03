@@ -171,5 +171,6 @@ export async function getStaticProps() {
       categories,
       cat_posts,
     },
+    revalidate: 10,
   };
 }

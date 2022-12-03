@@ -92,5 +92,6 @@ console.log(projects);
     props: {
       projects,
     },
+    revalidate: 10,
   };
 }
